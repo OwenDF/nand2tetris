@@ -13,5 +13,24 @@ CHIP Inc16 {
     OUT out[16];
 
     PARTS:
-   // Put you code here:
+    And(a=in[0], b=in[0], out=c1);
+    Nand(a=in[0], b=in[0], out=c2);
+    Or(a=c1, b=c2, out=c);
+    Not(in=c, out=d);
+    HalfAdder(a=in[0], b=c, sum=out[0], carry=car0);
+    FullAdder(a=in[1], b=d, c=car0, sum=out[1], carry=car1);
+    FullAdder(a=in[2], b=d, c=car1, sum=out[2], carry=car2);
+    FullAdder(a=in[3], b=d, c=car2, sum=out[3], carry=car3);
+    FullAdder(a=in[4], b=d, c=car3, sum=out[4], carry=car4);
+    FullAdder(a=in[5], b=d, c=car4, sum=out[5], carry=car5);
+    FullAdder(a=in[6], b=d, c=car5, sum=out[6], carry=car6);
+    FullAdder(a=in[7], b=d, c=car6, sum=out[7], carry=car7);
+    FullAdder(a=in[8], b=d, c=car7, sum=out[8], carry=car8);
+    FullAdder(a=in[9], b=d, c=car8, sum=out[9], carry=car9);
+    FullAdder(a=in[10], b=d, c=car9, sum=out[10], carry=car10);
+    FullAdder(a=in[11], b=d, c=car10, sum=out[11], carry=car11);
+    FullAdder(a=in[12], b=d, c=car11, sum=out[12], carry=car12);
+    FullAdder(a=in[13], b=d, c=car12, sum=out[13], carry=car13);
+    FullAdder(a=in[14], b=d, c=car13, sum=out[14], carry=car14);
+    Xor(a=in[15], b=car14, out=out[15]);
 }

@@ -1,0 +1,9 @@
+CHIP False{
+    IN in;    // 1-bit inputs
+    OUT false;
+
+    PARTS:
+    And(a=in, b=in, out=a1);
+    Nand(a=in, b=in, out=a2);
+    And(a=a1, b=a2, out=false);
+}

@@ -1,0 +1,8 @@
+CHIP True{
+    IN in;    // 1-bit inputs
+    OUT true;
+
+    PARTS:
+    False(in=in, false=false);
+    Not(in=false, out=true);
+}
