@@ -1,22 +1,22 @@
 CHIP True16{
     IN in[16];    // 1-bit inputs
-    OUT true[16];
+    OUT out[16];
 
     PARTS:
-    True(in=in[0], true=true[0]);
-    True(in=in[1], true=true[1]);
-    True(in=in[2], true=true[2]);
-    True(in=in[3], true=true[3]);
-    True(in=in[4], true=true[4]);
-    True(in=in[5], true=true[5]);
-    True(in=in[6], true=true[6]);
-    True(in=in[7], true=true[7]);
-    True(in=in[8], true=true[8]);
-    True(in=in[9], true=true[9]);
-    True(in=in[10], true=true[10]);
-    True(in=in[11], true=true[11]);
-    True(in=in[12], true=true[12]);
-    True(in=in[13], true=true[13]);
-    True(in=in[14], true=true[14]);
-    True(in=in[15], true=true[15]);
+    True(in=in[0], out=out[0]);
+    True(in=in[1], out=out[1]);
+    True(in=in[2], out=out[2]);
+    True(in=in[3], out=out[3]);
+    True(in=in[4], out=out[4]);
+    True(in=in[5], out=out[5]);
+    True(in=in[6], out=out[6]);
+    True(in=in[7], out=out[7]);
+    True(in=in[8], out=out[8]);
+    True(in=in[9], out=out[9]);
+    True(in=in[10], out=out[10]);
+    True(in=in[11], out=out[11]);
+    True(in=in[12], out=out[12]);
+    True(in=in[13], out=out[13]);
+    True(in=in[14], out=out[14]);
+    True(in=in[15], out=out[15]);
 }

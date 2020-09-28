@@ -42,7 +42,8 @@ CHIP ALU {
         ng; // 1 if (out < 0),  0 otherwise
 
     PARTS:
-    True(in=x[0], true=true);
+    True(in=x[0], out=true);
+    True16(in=x, out=true16);
     False16(in=x, out=false16);
     Mux16(a=x, b=false16, sel=zx, out=x1);
     Mux16(a=y, b=false16, sel=zy, out=y1);
@@ -54,5 +55,12 @@ CHIP ALU {
     Add16(a=x2, b=y2, out=xyadd);
     Mux16(a=xyand, b=xyadd, sel=f, out=xyop);
     Not16(in=xyop, out=xyopneg);
-    Mux16(a=xyop, b=xyopneg, sel=no, out=out);
+    Mux16(a=xyop, b=xyopneg, sel=no, out=outNum);
+    IsNegativeInt16(in=outNum, out=isNeg);
+    And16(a=outNum, b=outNum, out=out);
+    And(a=isNeg, b=isNeg, out=ng);
+    Add16(a=outNum, b=true16, out=twosComp);
+    IsNegativeInt16(in=twosComp, out=notPos);
+    Not(in=isNeg, out=notNeg);
+    And(a=notNeg, b=notPos, out=zr);
 }
