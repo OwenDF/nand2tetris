@@ -1,0 +1,10 @@
+CHIP Split {
+    IN in;
+    OUT out1, out2;
+
+    PARTS:
+    Not(in=in, out=o1);
+    Not(in=in, out=o2);
+    Not(in=o1, out=out1);
+    Not(in=o2, out=out2);
+}
